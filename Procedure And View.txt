@@ -1,0 +1,33 @@
+Procedure :-
+
+create or replace procedure discount(oid in int)
+as
+begin
+update order_table set totalam=round(totalam-(totalam*5/100)) where ordid=oid;
+end;
+
+call discount (2);
+
+
+create or replace procedure rcb (am in int)
+as
+begin 
+update order_table set qunatity = qunatity + 1 where ordid=am;
+end;
+
+call rcb(2);
+
+
+Veiw :-
+
+create view fulljoin as
+select customer.last_name,customer.phone_no,order_table.order_date,order_table.qunatity,order_table.totalam
+from customer
+full outer join order_table on customer.cust_id=order_table.cust_id;
+
+create view perfect as 
+select customer.frist_name,order_table.order_date,order_table.product_nm,order_table.qunatity,order_table.totalam 
+from customer 
+inner join order_table on customer.cust_ID=order_table.cust_ID
+
+

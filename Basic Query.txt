@@ -1,0 +1,20 @@
+Basic Query
+
+elect * from order_table order by order_date desc;
+
+select * from customer;
+
+select * from order_table;
+
+select * from perfect;
+
+select count(*) as total_orders from order_table;
+
+select avg(totalam) average_total_amount
+from order_table;
+
+update customer set phone_no = 8605207339 where frist_name = 'virat';
+
+delete from order_table where  ordid = 4;
+
+alter table customer add gender varchar(6);

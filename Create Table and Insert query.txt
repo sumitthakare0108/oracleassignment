@@ -1,0 +1,52 @@
+create table customer (
+    cust_ID int Primary key,
+    frist_name varchar(10),
+    last_name varchar(15),
+    email varchar(30) UNIQUE,
+    phone_No varchar(10) 
+    );
+
+select * from customer;
+
+insert into customer values (101,'stevan','smith','smithlothe@gmail.com','7845109634');
+insert into customer values (102,'ben','strock','benstrock#gmail.com','7825963410');
+insert into customer values (103,'virat','kholi','viratkholi@gmail.com','1204785963');
+insert into customer values (104,'sachin','Tendulkar','sachin23@gmail.com','1023456987');
+insert into customer values (105,'Ricky','Ponting','ricky102@gmail.com','4569781230');
+insert into customer values (106,'AB de','Villieres','AbdRcb@gmail.com','1047258963');
+insert into customer values(107,'chris','gayle','chrisgayle@gmail.com','1230478569');
+insert into customer values(108,'lala','Bhai','lalabhai01@gmail.com','1025463987');
+insert into customer values(109,'Kumar','Sangakkara','Kumarlanka@gmail.com','8605207339');
+insert into customer values(110,'Rahul','Dravid','Rhaul@gmail.com','5647891230');
+insert into customer values(111,'Rohit','Sharma','rohit45@gmail.com','1024356789');
+insert into customer values(112,'Rashid','Khan','rashid@gmail.com','1047258369');
+insert into customer values(113,'shai','hope','hope@gamil.com','0125346789');
+insert into customer (cust_id,frist_name,last_name) values (114,'Hardik','Pandya');
+insert into customer (cust_id,frist_name,last_name,email) values (115,'Finn','Allen','finn@gamil.com');
+insert into customer (cust_id,frist_name,email,phone_no) values (116,'kane','kane@gamil.com','8605207339');
+
+create table order_table (
+    ordID int Primary key,
+    order_date date,
+    product_nm varchar(30),
+    qunatity varchar(40),
+    totalam float not null,
+    cust_ID  int,
+    foreign key(cust_ID) REFERENCES customer(cust_id)
+    
+);
+
+
+insert into order_table values(04,to_date('2020-02-29','YYYY-MM-DD'),'Ledar Bat','4',18000,104);
+insert into order_table values(05,to_date('2024-01-12','YYYY-MM-DD'),'Ledar Ball','10',4560,105);
+insert into order_table values(06,to_date('2023-09-13','YYYY-MM-DD'),'Stumps','12',1200,106);
+insert into order_table values(07,to_date('2023-02-14','YYYY-MM-DD'),'Helmet','2',1800,107);
+insert into order_table values(08,to_date('2023-12-23','YYYY-MM-DD'),'ledar pink ball','1',4200,108);
+insert into order_table values(01,to_date('2024-02-23','YYYY-MM-DD'),'Cricket Bags','2',1200,101);
+insert into order_table values(02,to_date('2023-08-03','YYYY-MM-DD'),'Gloves','6',7800,102);
+insert into order_table values(03,to_date('2022-11-16','YYYY-MM-DD'),'Cricket Socks','5',8500,103);
+insert into order_table values(09,to_date('2024-01-01','YYYY-MM-DD'),'Batting Pads','3',6000,109);
+insert into order_table values(10,to_date('2023-07-13','YYYY-MM-DD'),'cricket shoes','2',18000,110);
+insert into order_table values(12,to_date('2023-04-14','YYYY-MM-DD'),'cricket Batting Gloves','3',6500,112);
+insert into order_table values(13,to_date('2023-12-06','YYYY-MM-DD'),'Thigh gauards','1',1390,114);
+insert into order_table(ordID,order_date,totalam,cust_id) values (17,to_date('2022-09-13','YYYY-MM-DD'),12000,116);

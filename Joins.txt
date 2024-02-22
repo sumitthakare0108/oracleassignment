@@ -1,0 +1,24 @@
+Inner join
+
+select customer.frist_name,order_table.order_date,order_table.product_nm 
+from customer 
+inner join order_table on customer.cust_ID=order_table.cust_ID
+
+Left outer join
+
+select customer.frist_name,order_table.order_date,order_table.product_nm 
+from customer 
+left outer join order_table on customer.cust_ID=order_table.cust_ID
+
+Full Outer Join
+
+select customer.last_name,customer.phone_no,order_table.order_date,order_table.qunatity,order_table.totalam
+from customer
+full outer join order_table on customer.cust_id=order_table.cust_id;
+
+
+Right outer join
+
+select customer.frist_name,customer.phone_no,customer.last_name,order_table.order_date,order_table.qunatity,order_table.totalam
+from customer 
+right outer join order_table on customer.cust_id = order_table.cust_id;
